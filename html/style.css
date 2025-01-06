@@ -1,0 +1,27 @@
+h1 {
+  color: blueviolet;
+  background-color: yellow;
+  text-align: center;
+}
+
+input {
+  background-color: beige;
+  width: 400px;
+}
+
+.notification {
+  color: red;
+  font-size: 20px;
+}
+
+.bgGreen {
+  background-color: green;
+}
+
+#margin-100 {
+  margin: 100px;
+}
+
+#font-bold {
+  font-weight: 900;
+}

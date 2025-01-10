@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScript Basics Expanded</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+
+            .highlight {
+                color: red;
+                font-weight: bold;
+            }
+
+            #output,
+            #listOutput,
+            #calculatorResult {
+                margin-top: 20px;
+                padding: 10px;
+                border: 1px solid #ccc;
+            }
+
+            .hidden {
+                display: none;
+            }
+
+            ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            li {
+                margin: 5px 0;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>JavaScript Basics: A Comprehensive Example</h1>
+
+        <!-- 1. Selecting and Changing Elements -->
+        <div>
+            <p id="text">This is a sample paragraph.</p>
+            <button id="changeTextBtn">Change Text</button>
+        </div>
+
+        <!-- 2. Toggling Visibility -->
+        <div>
+            <p id="toggleText">This text can be hidden or shown.</p>
+            <button id="toggleBtn">Toggle Visibility</button>
+        </div>
+
+        <!-- 3. Dynamic List Manipulation -->
+        <div>
+            <h2>Dynamic List</h2>
+            <input type="text" id="listItemInput" placeholder="Enter a list item" />
+            <button id="addItemBtn">Add Item</button>
+            <button id="clearListBtn">Clear List</button>
+            <ul id="listOutput"></ul>
+        </div>
+
+        <!-- 4. Simple Calculator -->
+        <div>
+            <h2>Simple Calculator</h2>
+            <input type="number" id="num1" placeholder="Number 1" />
+            <input type="number" id="num2" placeholder="Number 2" />
+            <button id="addBtn">Add</button>
+            <button id="subtractBtn">Subtract</button>
+            <button id="multiplyBtn">Multiply</button>
+            <button id="divideBtn">Divide</button>
+            <div id="calculatorResult"></div>
+        </div>
+
+        <!-- 5. Working with Forms -->
+        <div>
+            <h2>Form Example</h2>
+            <form id="nameForm">
+                <label for="nameInput">Enter your name:</label>
+                <input type="text" id="nameInput" />
+                <button type="button" id="submitNameBtn">Submit</button>
+            </form>
+            <div id="output"></div>
+        </div>
+
+        <script>
+            // 1. Selecting and Changing Elements
+            document.getElementById('changeTextBtn').addEventListener('click', () => {
+                const textElement = document.getElementById('text');
+                textElement.innerHTML = 'The text has been changed!';
+                textElement.style.color = 'blue';
+            });
+
+            // 2. Toggling Visibility
+            document.getElementById('toggleBtn').addEventListener('click', () => {
+                const toggleText = document.getElementById('toggleText');
+                toggleText.classList.toggle('hidden');
+            });
+
+            // 3. Dynamic List Manipulation
+            const listOutput = document.getElementById('listOutput');
+            document.getElementById('addItemBtn').addEventListener('click', () => {
+                const itemInput = document.getElementById('listItemInput');
+                const itemValue = itemInput.value.trim();
+                if (itemValue) {
+                    const newItem = document.createElement('li');
+                    newItem.innerText = itemValue;
+                    listOutput.appendChild(newItem);
+                    itemInput.value = '';
+                } else {
+                    alert('Please enter a valid item.');
+                }
+            });
+
+            document.getElementById('clearListBtn').addEventListener('click', () => {
+                listOutput.innerHTML = '';
+            });
+
+            // 4. Simple Calculator
+            document.getElementById('addBtn').addEventListener('click', () => calculate('add'));
+            document.getElementById('subtractBtn').addEventListener('click', () => calculate('subtract'));
+            document.getElementById('multiplyBtn').addEventListener('click', () => calculate('multiply'));
+            document.getElementById('divideBtn').addEventListener('click', () => calculate('divide'));
+
+            function calculate(operation) {
+                const num1 = parseFloat(document.getElementById('num1').value);
+                const num2 = parseFloat(document.getElementById('num2').value);
+                const resultElement = document.getElementById('calculatorResult');
+
+                if (isNaN(num1) || isNaN(num2)) {
+                    resultElement.innerText = 'Please enter valid numbers.';
+                    return;
+                }
+
+                let result;
+                switch (operation) {
+                    case 'add':
+                        result = num1 + num2;
+                        break;
+                    case 'subtract':
+                        result = num1 - num2;
+                        break;
+                    case 'multiply':
+                        result = num1 * num2;
+                        break;
+                    case 'divide':
+                        result = num1 / num2;
+                        break;
+                }
+
+                resultElement.innerText = `Result: ${result}`;
+            }
+
+            // 5. Working with Forms
+            document.getElementById('submitNameBtn').addEventListener('click', () => {
+                const nameInput = document.getElementById('nameInput');
+                const outputDiv = document.getElementById('output');
+                const name = nameInput.value.trim();
+
+                if (name) {
+                    outputDiv.innerHTML = `Hello, <span class="highlight">${name}</span>!`;
+                } else {
+                    outputDiv.innerHTML = '<span class="highlight">Please enter your name.</span>';
+                }
+            });
+        </script>
+    </body>
+
+</html>

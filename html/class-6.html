@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>JavaScript Basics Expanded</title>
         <style>
             body {
@@ -41,20 +38,14 @@
 
     <body>
         <h1>JavaScript Basics: A Comprehensive Example</h1>
-
-        <!-- 1. Selecting and Changing Elements -->
         <div>
             <p id="text">This is a sample paragraph.</p>
             <button id="changeTextBtn">Change Text</button>
         </div>
-
-        <!-- 2. Toggling Visibility -->
         <div>
             <p id="toggleText">This text can be hidden or shown.</p>
             <button id="toggleBtn">Toggle Visibility</button>
         </div>
-
-        <!-- 3. Dynamic List Manipulation -->
         <div>
             <h2>Dynamic List</h2>
             <input type="text" id="listItemInput" placeholder="Enter a list item" />
@@ -63,7 +54,7 @@
             <ul id="listOutput"></ul>
         </div>
 
-        <!-- 4. Simple Calculator -->
+        <!-- tinyurl.com/edge-bwd -->
         <div>
             <h2>Simple Calculator</h2>
             <input type="number" id="num1" placeholder="Number 1" />
@@ -89,7 +80,7 @@
         <script>
             // 1. Selecting and Changing Elements
             document.getElementById('changeTextBtn').addEventListener('click', () => {
-                const textElement = document.getElementById('text');
+                textElement = document.getElementById('text');
                 textElement.innerHTML = 'The text has been changed!';
                 textElement.style.color = 'blue';
             });

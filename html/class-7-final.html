@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fancy Portfolio</title>
+        <link rel="stylesheet" href="class-7-final.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <header class="header">
+            <div class="container">
+                <h1>Your Name</h1>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="container">
+                <h2>Hi, I'm <span class="highlight">Your Name</span></h2>
+                <p>I'm a passionate <span class="highlight">Web Developer</span> creating elegant and efficient
+                    websites.</p>
+                <a href="#projects" class="btn">View My Work</a>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>
+                    I'm a web developer specializing in creating intuitive and visually appealing websites.
+                    My expertise includes modern web technologies like HTML, CSS, JavaScript, and frameworks like React.
+                </p>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2>Projects</h2>
+                <div class="project-grid">
+                    <div class="project">
+                        <h3>Project 1</h3>
+                        <p>A description of the project, highlighting its features and technologies used.</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                    <div class="project">
+                        <h3>Project 2</h3>
+                        <p>A description of the project, highlighting its features and technologies used.</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                    <div class="project">
+                        <h3>Project 3</h3>
+                        <p>A description of the project, highlighting its features and technologies used.</p>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Contact Me</h2>
+                <form action="#" method="post">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2025 Your Name. All rights reserved.</p>
+            </div>
+        </footer>
+    </body>
+
+</html>

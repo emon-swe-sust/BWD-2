@@ -60,3 +60,44 @@ body {
 .text-highlighter {
   color: rgb(2, 119, 123);
 }
+
+.projects {
+  padding: 40px 12%;
+  background-color: rgba(197, 236, 213, 0.907);
+}
+
+.project-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.project {
+  background-color: rgb(0, 115, 147);
+  padding: 24px;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.project-title {
+  font-size: 24px;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.project-button {
+  background-color: white;
+  color: cadetblue;
+  width: fit-content;
+  padding: 12px 24px;
+  margin: auto;
+  margin-top: 24px;
+  border-radius: 8px;
+}
+
+.project-button:hover {
+  background-color: cadetblue;
+  color: white;
+  cursor: pointer;
+}

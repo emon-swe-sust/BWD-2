@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>My name is <span id="name"></span></h2>
+<input id="nameInput">
+<button id="submitButton">submit</button>
+<script>
+
+function myFunction() {
+		document.getElementById("name").innerHTML = document.getElementById("nameInput").value;
+}
+
+document.getElementById("submitButton").addEventListener("click", myFunction)
+
+</script> 
+
+</body>
+</html>
+

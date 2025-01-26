@@ -1,0 +1,43 @@
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dynamic List</title>
+
+    </head>
+
+    <body>
+        <h1>Dynamic List</h1>
+        <p>Enter an item below to add it to the list:</p>
+
+        <input type="text" id="item-input" placeholder="Enter item">
+        <button id="add-button">Add to List</button>
+
+        <div id="list-container">
+            <h3>Items:</h3>
+            <ul id="item-list"></ul>
+        </div>
+
+        <script>
+            input = document.getElementById('item-input');
+            addButton = document.getElementById('add-button');
+            itemList = document.getElementById('item-list');
+
+            function buttonClicked() {
+                itemValue = input.value
+
+                if (itemValue) {
+                    listItem = document.createElement('li')
+                    listItem.textContent = itemValue
+                    itemList.appendChild(listItem)
+                    input.value = ''
+                } else {
+                    alert('Please enter a valid item!');
+                }
+            }
+            addButton.addEventListener('click', buttonClicked);
+        </script>
+    </body>
+
+</html>

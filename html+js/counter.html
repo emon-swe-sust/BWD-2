@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Advanced Interactive Counter</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                background-color: #f4f4f4;
+            }
+
+            .counter-container {
+                text-align: center;
+                background: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            .counter {
+                font-size: 2rem;
+                margin: 20px;
+            }
+
+            button {
+                font-size: 1rem;
+                padding: 10px 20px;
+                margin: 5px;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+                transition: 0.3s;
+            }
+
+            .increase {
+                background-color: green;
+                color: white;
+            }
+
+            .decrease {
+                background-color: red;
+                color: white;
+            }
+
+            .reset {
+                background-color: gray;
+                color: white;
+            }
+
+            .increase:hover {
+                background-color: darkgreen;
+            }
+
+            .decrease:hover {
+                background-color: darkred;
+            }
+
+            .reset:hover {
+                background-color: darkgray;
+            }
+
+            .history {
+                margin-top: 20px;
+                padding: 10px;
+                background: #fff;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                width: 300px;
+                max-height: 150px;
+                overflow-y: auto;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Advanced Interactive Counter</h1>
+        <div class="counter-container">
+            <div class="counter" id="counter">0</div>
+            <button class="increase" onclick="changeCounter(1)">Increase</button>
+            <button class="decrease" onclick="changeCounter(-1)">Decrease</button>
+            <button class="reset" onclick="resetCounter()">Reset</button>
+        </div>
+        <div class="history">
+            <h3>Change History</h3>
+            <ul id="history-list"></ul>
+        </div>
+
+        <script>
+            let count = 0;
+
+            function changeCounter(value) {
+                count = count + value;
+                document.getElementById('counter').textContent = count;
+                updateHistory(value, false);
+            }
+
+            function resetCounter() {
+                count = 0;
+                document.getElementById('counter').textContent = 0;
+                updateHistory(0, true);
+            }
+
+            function updateHistory(value, reset) {
+                const historyList = document.getElementById('history-list');
+
+                if (reset) {
+                    historyList.innerHTML = '';
+                    return;
+                }
+
+                const listItem = document.createElement('li');
+                listItem.textContent = "Counter changed by " + value;
+                historyList.appendChild(listItem);
+            }
+        </script>
+    </body>
+
+</html>
